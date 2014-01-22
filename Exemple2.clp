@@ -20,7 +20,7 @@
 (defrule blessure-crime-determine-arme
 	(declare (salience 30) )
 	(blessure-crime ?blessure)
-	(blessure ?blessure peu etre faite par arme ?arme)
+	(blessure ?blessure peut etre faite par arme ?arme)
 	=>
 	(printout t "L'arme du crime peu etre le/la " ?arme "." crlf)
 	(assert (arme-crime-possible ?arme))
@@ -51,7 +51,7 @@
 	(declare (salience 41) )
 	(arme-crime-possible ?arme)
 	(suspect-a ?nom ?arme)
-	(blessure ?blessure peu etre faite par arme ?arme)
+	(blessure ?blessure peut etre faite par arme ?arme)
 	=>
 	(printout t "Le crime a été fait par " ?nom " avec le/la " ?arme ", une blessure " ?blessure "." crlf)
 	(assert (Meurtrier ?nom))
